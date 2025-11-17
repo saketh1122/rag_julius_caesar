@@ -188,7 +188,50 @@ The LLM is strictly constrained to:
 This ensures answers match academic expectations.
 
 ---
+## Instructions: Run Project Using Docker Compose
 
+### 1. Requirements
+Install:
+- Docker
+- Docker Compose
 
+### 2. Project Structure
+Ensure a `.env` file exists with:
+GEMINI_API_KEY=your_api_key_here
 
- 
+### 3. Build the Docker Images
+docker compose build
+
+### 4. Start the System
+docker compose up
+
+### 5. Access the Application
+- Frontend (Streamlit): http://localhost:8501  
+- Backend (FastAPI): http://localhost:8000  
+- API Docs: http://localhost:8000/docs  
+
+### 6. Stop the Containers
+
+ - docker compose down
+
+---
+## Contribution 
+
+## 1. Chunk Strategies, ChromaDB Indexing, Web UI Interface
+- Chunking Strategies  
+- ChromaDB Indexing  
+- Backend
+- Frotnend 
+
+## 2. RAGs Evaluation, Retriever, Docker, EVAL.md
+- RAGs Evaluation  
+- Retriever  
+- Docker  
+- EVAL.md  
+
+## 3. Test Bed Questions, EVAL.md, Docker
+- Test Bed Questions  
+- EVAL.md  
+- Docker
+- Prompting Technique
+
