@@ -25,6 +25,43 @@ It enables users to ask natural-language questions about the play and receive:
   - Users interact via Streamlit
   - Streamlit → FastAPI → RAG pipeline → Answer + Evidence
 
+## Folder Structure
+
+backend/
+│
+├── Dockerfile # Backend Docker config
+├── main.py # FastAPI backend entrypoint
+├── rag.py # Core RAG pipeline
+├── requirements.txt # Backend dependencies
+│
+├── chroma_julius_caesar/ # Persistent ChromaDB (vector store)
+│ └── chroma.sqlite3 # Chroma database file 
+│
+├── chunking/ # Chunk-generation scripts
+│ ├── context_window.py
+│ ├── scene_level.py
+│ ├── scene_level_summarised.py
+│ └── speaker_level.py
+│
+├── indexing/ # Index-building scripts
+│ └── generate_chromadb.py
+│
+├── chunks/ # Pre-generated chunk JSONL files
+│ ├── julius_caesar_chunks.jsonl
+│ ├── julius_caesar_context_windows.jsonl
+│ ├── julius_caesar_explanation_chunks.jsonl
+│ └── julius_caesar_scene_chunks.jsonl
+│
+├── evaluation/ # RAG evaluation utilities
+│ ├── evaluate.py
+│ ├── questions.json
+│ └── rag_dataset.json
+│
+frontend/
+│
+├── Dockerfile # Frontend Docker config
+└── frontend.py # Streamlit UI
+
 ---
 
 ## 2. System Architecture
